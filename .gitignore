@@ -2,3 +2,5 @@ dn
 *.pyc
 *.logn
 *.zip
+demonetdb
+*.sqlite3

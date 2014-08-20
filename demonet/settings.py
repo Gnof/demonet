@@ -12,6 +12,19 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+
+DATABASES = {
+    'default': {
+        # we'll use sqlite3 for development, and host on aws or some other service later
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'demonetdb',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    },
+}
+
 STATIC_ROOT = BASE_DIR + '/staticdump'
 
 # URL prefix for static files.
@@ -75,7 +88,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'demoapp',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (
