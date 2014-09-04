@@ -17,7 +17,7 @@ DATABASES = {
     'default': {
         # we'll use sqlite3 for development, and host on aws or some other service later
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'demonetdb',                      # Or path to database file if using sqlite3.
+        'NAME': BASE_DIR + '/demonetdb',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -104,17 +104,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'demonet.urls'
 
 WSGI_APPLICATION = 'demonet.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
